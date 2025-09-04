@@ -43,6 +43,15 @@ export function HomeClient() {
           </p>
         </div>
         </WaitlistWrapper>
+        
+        {/* Footer Links */}
+        <div className="text-center mt-6">
+          <p className="text-xs text-white/80">
+            <a href="/privacy" className="text-white hover:underline">Privacy Policy</a>
+            {" · "}
+            <a href="/terms" className="text-white hover:underline">Terms of Service</a>
+          </p>
+        </div>
       </CardWithNav>
 
       {/* Premium Waitlist Modal */}
