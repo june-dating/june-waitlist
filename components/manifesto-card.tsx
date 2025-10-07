@@ -17,18 +17,6 @@ export function ManifestoCard() {
       role: "Chief Executive Officer",
       linkedin: "https://www.instagram.com/aija/",
       image: "/aija.jpg"
-    },
-    {
-      name: "Jeet Dekivadia",
-      role: "Chief Technology Officer", 
-      linkedin: "https://www.linkedin.com/in/jeetdekivadia/",
-      image: "/headshot.jpeg"
-    },
-    {
-      name: "Kartik Bihani",
-      role: "Chief Product Officer",
-      linkedin: "https://www.linkedin.com/in/kbihani/",
-      image: "/gupta.jpeg"
     }
   ]
 

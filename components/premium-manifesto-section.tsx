@@ -148,9 +148,9 @@ export function PremiumManifestoSection() {
           
           <div className="space-y-2">
             <p className="text-slate-11 font-medium">
-              <strong className="text-slate-12">Jeet Dekivadia</strong> & <strong className="text-slate-12">Kartikey Bihani</strong>
+              <strong className="text-slate-12">Aija Mayrock</strong>
             </p>
-            <p className="text-slate-10 text-sm">Co-Founders • Building the future of dating</p>
+            <p className="text-slate-10 text-sm">Chief Executive Officer • Building the future of dating</p>
           </div>
         </motion.div>
       </motion.div>

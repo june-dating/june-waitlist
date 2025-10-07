@@ -4,7 +4,7 @@ The revolutionary AI dating app that connects you with your perfect match. No en
 
 ## Team
 
-**Co-Founders:** Jeet Dekivadia & Kartikey Bihani
+
 
 **Backed by:** Nas Company, Nusseir Yasin, and Aija Mayrock
 

@@ -60,8 +60,8 @@ export const metadata = {
     "meaningful connections"
   ],
   authors: [{ name: "June Team" }],
-  creator: "Jeet Dekivadia",
-  publisher: "Jeet Dekivadia",
+  creator: "Aija Mayrock",
+  publisher: "Aija Mayrock",
   applicationName: "June",
   referrer: "origin-when-cross-origin",
   icons: {

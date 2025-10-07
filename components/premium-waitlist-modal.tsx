@@ -1002,6 +1002,14 @@ export function PremiumWaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
       // Format social URLs
       const socialUrls = formatSocialUrl(formData.social)
 
+      // Debug: Log the form data before submission
+      console.log('Form data before submission:', {
+        countryCode: formData.countryCode,
+        phone: formData.phone,
+        constructedPhone: `${formData.countryCode}${formData.phone.replace(/\s/g, '')}`,
+        fullFormData: formData
+      })
+
       // Try with all fields first
       const fullSubmissionData = {
         email: null, // Set email as null as requested
@@ -1028,6 +1036,7 @@ export function PremiumWaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
         // Try with basic required fields only
         const minimalData = {
           name: formData.name,
+          phone: `${formData.countryCode}${formData.phone.replace(/\s/g, '')}`,
           instagram: socialUrls.instagram,
           created_at: new Date()
         }

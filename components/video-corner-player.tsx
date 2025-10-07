@@ -146,8 +146,6 @@ export function VideoCornerPlayer() {
                     'Join others on the June waitlist'
                   ) : count === 0 ? (
                     'Be the first on the June waitlist'
-                  ) : count === 1 ? (
-                    'Join 1 other on the June waitlist'
                   ) : (
                     `Join ${count+5000} others on the June waitlist`
                   )}
@@ -155,7 +153,7 @@ export function VideoCornerPlayer() {
                 {/* Only show launch date on desktop */}
                 {!isMobile && (
                   <span className="text-white/90 text-xs drop-shadow-sm">
-                    <strong className="text-white">Launching August 18, 2025</strong> • National Couples Day
+                    <strong className="text-white">Coming to A City Near You</strong>
                   </span>
                 )}
               </div>
