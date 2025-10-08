@@ -1,0 +1,54 @@
+[
+  {
+    "email": "alex.anderson@example.com",
+    "name": "Alex Anderson",
+    "phone": "+15551234567",
+    "gender": "Male",
+    "age": 28,
+    "instagram": "@alexanderson",
+    "linkedin": "linkedin.com/in/alex-anderson",
+    "twitter": "@alexanderson",
+    "batch_number": 1
+  },
+  {
+    "email": "sarah.johnson@example.com",
+    "name": "Sarah Johnson",
+    "phone": "+15559876543",
+    "gender": "Female",
+    "age": 25,
+    "instagram": "@sarahj",
+    "linkedin": "linkedin.com/in/sarah-johnson",
+    "batch_number": 1
+  },
+  {
+    "email": "jordan.smith@example.com",
+    "name": "Jordan Smith",
+    "phone": "+15555678901",
+    "gender": "Other",
+    "age": 30,
+    "instagram": "@jordansmith",
+    "twitter": "@jordansmith",
+    "batch_number": 2
+  },
+  {
+    "email": "taylor.davis@example.com",
+    "name": "Taylor Davis",
+    "phone": "+15553456789",
+    "gender": "Female",
+    "age": 26,
+    "instagram": "@taylordavis",
+    "linkedin": "linkedin.com/in/taylor-davis",
+    "twitter": "@taylordavis",
+    "batch_number": 2
+  },
+  {
+    "email": "casey.wilson@example.com",
+    "name": "Casey Wilson",
+    "phone": "+15551234568",
+    "gender": "Male",
+    "age": 29,
+    "instagram": "@caseywilson",
+    "linkedin": "linkedin.com/in/casey-wilson",
+    "batch_number": 3
+  }
+]

@@ -621,11 +621,36 @@ export function PremiumWaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
   const [isLoadingLocation, setIsLoadingLocation] = useState(false)
   const [isDetectingLocation, setIsDetectingLocation] = useState(false)
   const [isLocationSelected, setIsLocationSelected] = useState(false) // Prevent search after selection
+  const [utmParams, setUtmParams] = useState<Record<string, string | null>>({})
   const supabase = createClient()
   const modalRef = useRef<HTMLDivElement>(null)
 
   // Debounced search term for API calls - ultra fast for better UX
   const debouncedLocationSearch = useDebounce(formData.location, 50)
+
+  // Capture UTM parameters when modal opens
+  useEffect(() => {
+    if (isOpen && typeof window !== 'undefined') {
+      const searchParams = new URLSearchParams(window.location.search)
+      
+      const params = {
+        utm_source: searchParams.get('utm_source') || null,
+        utm_medium: searchParams.get('utm_medium') || null,
+        utm_campaign: searchParams.get('utm_campaign') || null,
+      }
+      
+      setUtmParams(params)
+      
+      // Log captured UTM parameters
+      console.log('🎯 UTM Parameters captured from URL:', params)
+      
+      // Optional: Store in localStorage for persistence
+      if (Object.values(params).some(val => val !== null)) {
+        localStorage.setItem('june_utm_params', JSON.stringify(params))
+        console.log('💾 UTM Parameters saved to localStorage')
+      }
+    }
+  }, [isOpen])
 
   // Handle initial loading animation when modal opens
   useEffect(() => {
@@ -1021,8 +1046,16 @@ export function PremiumWaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
         instagram: socialUrls.instagram,
         linkedin: socialUrls.linkedin,
         twitter: socialUrls.twitter,
-        created_at: new Date()
+        created_at: new Date(),
+        // Include UTM parameters
+        utm_source: utmParams.utm_source,
+        utm_medium: utmParams.utm_medium,
+        utm_campaign: utmParams.utm_campaign
       }
+
+      // Log all data being sent to database
+      console.log('📊 Full Data being sent to Supabase:', JSON.stringify(fullSubmissionData, null, 2))
+      console.log('🔍 UTM Parameters:', utmParams)
 
       let { data, error: supabaseError } = await supabase
         .from('waitlist')
@@ -1038,8 +1071,15 @@ export function PremiumWaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
           name: formData.name,
           phone: `${formData.countryCode}${formData.phone.replace(/\s/g, '')}`,
           instagram: socialUrls.instagram,
-          created_at: new Date()
+          created_at: new Date(),
+          // Include UTM parameters even in minimal data
+          utm_source: utmParams.utm_source,
+          utm_medium: utmParams.utm_medium,
+          utm_campaign: utmParams.utm_campaign
         }
+
+        // Log minimal data being sent
+        console.log('📊 Minimal Data being sent to Supabase (fallback):', JSON.stringify(minimalData, null, 2))
 
         const { data: retryData, error: retryError } = await supabase
           .from('waitlist')
@@ -1068,6 +1108,11 @@ export function PremiumWaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
         
         throw new Error(`Database error (${supabaseError.code}): ${supabaseError.message}`)
       }
+
+      // Log successful submission with returned data
+      console.log('✅ Successfully saved to database!')
+      console.log('💾 Saved data:', data)
+      console.log('📈 Waitlist position:', (count || 0) + 1)
 
       // Set waitlist position (current count + 1 for the new entry)
       setWaitlistPosition((count || 0) + 1)
