@@ -30,6 +30,12 @@ const nextConfig = {
           source: "/",
           destination: "https://june-date.framer.website/",
         },
+        {
+
+          source: "/apply",
+          destination: "https://june-date.framer.website/apply",
+
+        }
       ],
     };
   },
