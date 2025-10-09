@@ -57,7 +57,6 @@ export async function POST(request: NextRequest) {
     // Validate required fields
     const requiredFields = [
       "name",
-      "countryCode",
       "phone",
       "location",
       "age",
@@ -80,7 +79,7 @@ export async function POST(request: NextRequest) {
     const row = {
       email: null,
       name: payload.name,
-      phone: `${payload.countryCode}${payload.phone}`,
+      phone: `${payload.phone}`,
       location: payload.location,
       gender: null,
       age: parseInt(payload.age),
