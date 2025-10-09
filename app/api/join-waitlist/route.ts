@@ -1,6 +1,18 @@
 import { createClient } from "@/lib/supabase/client";
 import { NextRequest, NextResponse } from "next/server";
 
+// CORS headers - allow all origins
+const corsHeaders = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Methods": "POST, OPTIONS",
+  "Access-Control-Allow-Headers": "Content-Type, Authorization",
+};
+
+// Handle OPTIONS preflight request
+export async function OPTIONS() {
+  return NextResponse.json({}, { headers: corsHeaders });
+}
+
 const formatSocialUrl = (value: string) => {
   try {
     if (!value) return { instagram: null, linkedin: null, twitter: null };
@@ -56,7 +68,7 @@ export async function POST(request: NextRequest) {
         console.error(`Missing required field: ${field}`);
         return NextResponse.json(
           { error: `Missing required field: ${field}` },
-          { status: 400 }
+          { status: 400, headers: corsHeaders }
         );
       }
     }
@@ -89,16 +101,16 @@ export async function POST(request: NextRequest) {
       console.error("Supabase error:", error);
       return NextResponse.json(
         { error: "Failed to join waitlist" },
-        { status: 500 }
+        { status: 500, headers: corsHeaders }
       );
     }
 
-    return NextResponse.json({ success: true, data }, { status: 201 });
+    return NextResponse.json({ success: true, data }, { status: 201, headers: corsHeaders });
   } catch (error) {
     console.error("API error:", error);
     return NextResponse.json(
       { error: "Internal server error" },
-      { status: 500 }
+      { status: 500, headers: corsHeaders }
     );
   }
 }

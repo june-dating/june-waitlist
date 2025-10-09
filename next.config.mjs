@@ -23,16 +23,16 @@ const nextConfig = {
   },
   poweredByHeader: false,
   compress: true,
-  // async rewrites() { // todo: uncomment when framer is ready
-  //   return {
-  //     beforeFiles: [
-  //       {
-  //         source: "/",
-  //         destination: "https://lime-experiences-678605.framer.app/",
-  //       },
-  //     ],
-  //   };
-  // },
+  async rewrites() { // todo: uncomment when framer is ready
+    return {
+      beforeFiles: [
+        {
+          source: "/",
+          destination: "https://june-date.framer.website/",
+        },
+      ],
+    };
+  },
 };
 
 export default nextConfig;
