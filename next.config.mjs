@@ -23,7 +23,7 @@ const nextConfig = {
   },
   poweredByHeader: false,
   compress: true,
-  async rewrites() { // todo: uncomment when framer is ready
+  async rewrites() {
     return {
       beforeFiles: [
         {
@@ -31,19 +31,36 @@ const nextConfig = {
           destination: "https://june-date.framer.website/",
         },
         {
-
           source: "/apply",
           destination: "https://june-date.framer.website/apply",
-
         },
         {
-
           source: "/confirmation",
           destination: "https://june-date.framer.website/confirmation",
-
-        }
+        },
       ],
     };
+  },
+  async headers() {
+    return [
+      {
+        // matching all API routes
+        source: "/api/:path*",
+        headers: [
+          { key: "Access-Control-Allow-Credentials", value: "true" },
+          { key: "Access-Control-Allow-Origin", value: "*" }, // later replace with actual origins
+          {
+            key: "Access-Control-Allow-Methods",
+            value: "GET,DELETE,PATCH,POST,PUT",
+          },
+          {
+            key: "Access-Control-Allow-Headers",
+            value:
+              "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version",
+          },
+        ],
+      },
+    ];
   },
 };
 
