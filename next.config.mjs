@@ -38,6 +38,10 @@ const nextConfig = {
           source: "/confirmation",
           destination: "https://june-date.framer.website/confirmation",
         },
+        {
+          source: "/tnc",
+          destination: "https://june-date.framer.website/tnc",
+        },
       ],
     };
   },
