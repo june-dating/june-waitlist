@@ -77,11 +77,11 @@ export async function POST(request: NextRequest) {
 
     // Create row object for waitlist table
     const row = {
-      email: null,
+      email: payload.email || null,
       name: payload.name,
       phone: `${payload.phone}`,
       location: payload.location,
-      gender: null,
+      gender: null, 
       age: parseInt(payload.age),
       ...socialUrls,
       utm_source: payload.utm_source,
