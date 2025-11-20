@@ -66,9 +66,9 @@ export default function Privacy() {
           <section className="space-y-4">
             <h2 className="text-2xl font-semibold text-black">Introduction</h2>
             <p className="leading-relaxed">
-              Welcome to June, the AI-powered dating app that's revolutionizing how people find meaningful connections. 
+              Welcome to June, the AI-powered social connections platform that's revolutionizing how people find meaningful connections. 
               At June, we believe your privacy is fundamental. This Privacy Policy explains how we collect, use, and 
-              protect your information with one simple principle: your data is used solely to help you find your perfect match.
+              protect your information with one simple principle: your data is used solely to help you find compatible connections.
             </p>
           </section>
 
@@ -76,7 +76,7 @@ export default function Privacy() {
             <h2 className="text-2xl font-semibold text-black">Our Core Privacy Promise</h2>
             <div className="bg-white/20 p-6 rounded-lg border border-gray-300">
               <p className="text-lg font-medium text-black mb-2">
-                We only collect and use your data for one purpose: finding you the right match.
+                We only collect and use your data for one purpose: finding you the right connections.
               </p>
               <p className="leading-relaxed">
                 Unlike other dating platforms, we don't sell your data to third parties, use it for advertising to external companies, 
@@ -101,7 +101,7 @@ export default function Privacy() {
               <div>
                 <h3 className="text-xl font-medium text-black mb-2">App Usage Data</h3>
                 <ul className="list-disc pl-6 space-y-1">
-                  <li>How you interact with potential matches</li>
+                  <li>How you interact with potential connections</li>
                   <li>Communication patterns and preferences</li>
                   <li>Feature usage to improve our matching algorithm</li>
                 </ul>
@@ -113,11 +113,10 @@ export default function Privacy() {
             <h2 className="text-2xl font-semibold text-black">How We Use Your Information</h2>
             <div className="space-y-4">
               <div>
-                <h3 className="text-xl font-medium text-black mb-2">Matchmaking Excellence</h3>
+                <h3 className="text-xl font-medium text-black mb-2">Finding a compatible connection</h3>
                 <p className="leading-relaxed">
                   Our AI analyzes your profile, preferences, and behavior to understand what makes you unique and 
-                  what you're looking for in a partner. This allows us to suggest highly compatible matches instead 
-                  of requiring endless swiping.
+                  what you're looking for. This allows us to suggest highly compatible connections.
                 </p>
               </div>
               <div>
@@ -130,7 +129,7 @@ export default function Privacy() {
               <div>
                 <h3 className="text-xl font-medium text-black mb-2">Service Improvement</h3>
                 <p className="leading-relaxed">
-                  We analyze usage patterns to improve our matching algorithms and user experience, always with 
+                  We analyze usage patterns to improve our algorithms and user experience, always with 
                   the goal of helping you find better connections.
                 </p>
               </div>
