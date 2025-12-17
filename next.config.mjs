@@ -46,6 +46,10 @@ const nextConfig = {
           source: "/delete-account",
           destination: "https://june-date.framer.website/delete-account",
         },
+        {
+          source: "/privacy",
+          destination: "https://june-date.framer.website/privacy",
+        },
       ],
     };
   },
