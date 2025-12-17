@@ -28,3 +28,6 @@ next-env.d.ts
 emails/.DS_Store
 .DS_Store
 package-lock.json
+
+
+scripts/private
