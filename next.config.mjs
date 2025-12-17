@@ -42,6 +42,10 @@ const nextConfig = {
           source: "/tnc",
           destination: "https://june-date.framer.website/tnc",
         },
+        {
+          source: "/delete-account",
+          destination: "https://june-date.framer.website/delete-account",
+        },
       ],
     };
   },
